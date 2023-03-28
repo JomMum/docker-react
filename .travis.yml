@@ -14,3 +14,13 @@ script:
 
 after_success:
   - echo "test success"
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-025255173273"
+  bucket_path: "docker_react"
+  on:
+    branch: master
